@@ -12,6 +12,7 @@ jobs:
   build:
     uses: cider-research-testing/public/.github/workflows/main.yml@main
     # The type of runner that the job will run on
+    secrets: inherit
   deploy:
     runs-on: ubuntu-latest
     
