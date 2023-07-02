@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Issue Comment
+
+# Controls when the workflow will run
+on:
+  issue_comment:
+    types: [created, deleted]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: Close Stale Issues
+        uses: actions/stale@v4.1.1
+
+      - name: Check PR title
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          if [[ $title =~ ^hotfix ]]; then          
+          echo "PR title starts with 'hotfix', trigger slack workflow"
+          curl $SLACK_WEBHOOK
+          fi
+    env: # Or as an environment variable
+      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
