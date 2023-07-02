@@ -21,13 +21,7 @@ jobs:
       
       - name: Close Stale Issues
         uses: actions/stale@v4.1.1
-
-      - name: Check PR title
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
         run: |
-          title="${{ github.event.pull_request.title }}"
-          if [[ $title =~ ^hotfix ]]; then          
-          echo "PR title starts with 'hotfix', trigger slack workflow"
-          curl $SLACK_WEBHOOK
-          fi
-    env: # Or as an environment variable
-      SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          echo cloud secret: $SUPER_CLOUD_SECRET
