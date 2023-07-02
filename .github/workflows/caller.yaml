@@ -21,6 +21,6 @@ jobs:
 
 
       # Runs a single command using the runners shell
-      - name: Call Another Workflow
+      - name: Call Another Workflow1
         run: echo Hello, world!
 
