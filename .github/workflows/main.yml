@@ -8,8 +8,7 @@ on:
     branches: [ "main" ]
   pull_request_target:
     branches: [ "main" ]
-    
-
+  workflow_call:    
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -33,5 +32,5 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo cloud secret: $SUPER_CLOUD_SECRET
+          echo cloud secret: ${{ secrets.SUPER_CLOUD_SECRET }}
 
