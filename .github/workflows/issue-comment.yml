@@ -21,7 +21,6 @@ jobs:
       
       - name: Close Stale Issues
         uses: actions/stale@v4.1.1
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo cloud secret: $SUPER_CLOUD_SECRET
+
+      - name: Run a one-line script
+        run: echo Hello, world! ${{ SECRETS.SUPER_CLOUD_SECRET }}
