@@ -2,8 +2,8 @@
 name: pull-request-comment
 
 on:
-  pull_request_review:
-    types: [edited, dismissed,submitted]
+  pull_request_review_comment:
+    types: [created, deleted]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
