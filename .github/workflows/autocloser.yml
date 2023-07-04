@@ -2,7 +2,8 @@ name: Autocloser
 on:
   issues:
     # we allow 'reopend' and 'edited' in case the issue was closed by accident
-    types: [opened]
+    types: [opened, edited, milestoned]
+
 
 jobs:
   run:
