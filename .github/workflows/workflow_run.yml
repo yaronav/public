@@ -20,7 +20,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
         with:
-          repository: ${{ github.event.workflow_run.head_repository.full_name }}
+          #repository: ${{ github.event.workflow_run.head_repository.full_name }}
           ref: ${{ github.event.workflow_run.pull_requests[0].head.sha }}
       - run: ls
 
