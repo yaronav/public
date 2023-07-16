@@ -37,5 +37,5 @@ jobs:
           #repository: ${{ github.event.workflow_run.head_repository.full_name }}
           ref: ${{ github.event.workflow_run.head_branch.sha }}
       - run: echo desc ${{ github.event.workflow_run.path }}
-      - run: echo desc ${{ github.event }}
+      - run: echo desc ${{ github.event.workflow_run.event }}
       - run: ls 
