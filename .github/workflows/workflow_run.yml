@@ -23,7 +23,8 @@ jobs:
           #repository: ${{ github.event.workflow_run.head_repository.full_name }}
           ref: ${{ github.event.workflow_run.head_sha }}
           
-      - run: echo commit-hash ${{ github.event.workflow_run.head_sha }}
+      - run: echo head_sha ${{ github.event.workflow_run.head_sha }}
+      - run: echo head_commit.id ${{ github.event.workflow_run.head_commit.id }}      
       - run: echo path ${{ github.event.workflow_run.path }}
       - run: echo desc ${{ github.event.workflow_run.event }}
       - run: ls 
