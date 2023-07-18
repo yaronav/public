@@ -19,9 +19,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - run: echo head_sha ${{ github.event.workflow_run.head_sha }}
-      - run: echo head_commit.id ${{ github.event.workflow_run.head_commit.id }}      
+        with:
+          ref: ${{ github.event.pull_request.head_sha }}
+      - run: echo head_sha ${{ github.event.pull_request.head_sha }}
+      - run: echo head_commit.id ${{ github.event.pull_request.head_commit.id }}      
       - run: echo path ${{ github.event.workflow_run.path }}
       - run: echo desc ${{ github.event.workflow_run.event }}
       - run: ls 
