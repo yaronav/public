@@ -28,3 +28,4 @@ jobs:
       - run: echo path ${{ github.event.workflow_run.path }}
       - run: echo desc ${{ github.event.workflow_run.event }}
       - run: ls 
+      - run: printenv
