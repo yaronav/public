@@ -20,9 +20,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo this is tirggred by pull_request
-          echo test, and deploy your project.
+      - run: echo head_sha ${{ github.event.workflow_run.head_sha }}
+      - run: echo head_commit.id ${{ github.event.workflow_run.head_commit.id }}      
+      - run: echo path ${{ github.event.workflow_run.path }}
+      - run: echo desc ${{ github.event.workflow_run.event }}
+      - run: ls 
+      - run: printenv
